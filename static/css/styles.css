@@ -10,6 +10,14 @@ body {
     align-items: center;
 }
 
+html {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
 ul {
     position: relative;
     display: flex;
@@ -27,22 +35,21 @@ input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    height: 80px;
-    width: 80px;
+    height: 68px;
+    width: 68px;
     z-index: 100;
 }
 
 div {
     position: relative;
-    height: 80px;
-    width: 80px;
+    height: 68px;
+    width: 68px;
     background: #18191f;
     color: #555;
     display: flex;
-    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 46px;
+    font-size: 38px;
     cursor: pointer;
     margin: 0 4px;
     border-radius: 20px;
@@ -63,4 +70,35 @@ input[type="checkbox"]:checked~div {
     100% {
         filter: hue-rotate(360deg);
     }
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row > * {
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 100%;
+}
+
+.col {
+	flex: 1 0 0%;
+	justify-content: center;
+}
+
+@media (min-width: 640px) {
+	.col {
+		flex: 1 0 0%;
+	}
+	div {
+		font-size: 46px;
+		height: 80px;
+    	width: 80px;
+	}
+	input[type="checkbox"] {
+		height: 80px;
+		width: 80px;
+	}
 }
